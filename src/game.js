@@ -8,11 +8,11 @@ export default class Game {
       [null, null, null],
     ]
     this.player = Math.random() < 0.5 ? this.p1 : this.p2
-    this.sym = "X"
+    this.sym = 'X'
   }
 
   turn (row, col) {
-    col = col || row;
+    col = col || row
     this.board[row][col] = this.sym
   }
 
@@ -26,24 +26,24 @@ export default class Game {
   }
 
   rowWin () {
-    let win = false;
-    for (let r = 0; r < 3; r++) {
+    let win = false
+    for (let r = 0 r < 3 r++) {
       const row = this.board[r]
       if (row[0] === null) {
-        continue;
+        continue
       }
       win = win || (row[0] === row[1] && row[0] === row[2])
     }
 
-    return win;
+    return win
   }
 
   colWin () {
-    let win = false;
-    for (let c = 0; c < 3; c++) {
+    let win = false
+    for (let c = 0 c < 3 c++) {
       const col = this.board
       if (col[0][c] === null) {
-        continue;
+        continue
       }
       win = win || (col[0][c] === col[1][c] && col[0][c] === col[2][c])
     }
